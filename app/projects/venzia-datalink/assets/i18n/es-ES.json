@@ -21,7 +21,8 @@
     "MESSAGES": {
       "ERROR": {
         "ONLY_FILES":"Modulo no disponible para carpetas",
-        "NO_PROPERTIES": "Contenido no compatible. Consulte con el administrador"
+        "NO_PROPERTIES": "Contenido no compatible. Consulte con el administrador",
+        "EMPTY_SELECTION": "No hay elementos selecionados"
       }
     }
   }

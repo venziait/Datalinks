@@ -20,8 +20,9 @@
     },
     "MESSAGES": {
       "ERRORS": {
-        "ONLY_FILES":"Not a available for folders",
-        "NO_PROPERTIES": "Contenido no compatible. Por favor contacte con el administrador"
+        "ONLY_FILES":"Not a available for folders.",
+        "NO_PROPERTIES": "Not compatible content. Please contact administrator.",
+        "EMPTY_SELECTION": "No elements selected."
       }
     }
   }

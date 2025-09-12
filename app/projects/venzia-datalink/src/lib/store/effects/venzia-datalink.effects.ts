@@ -26,10 +26,10 @@ export class VenziaDatalinkEffects {
               .select(getAppSelection)
               .pipe(take(1))
               .subscribe((selection) => {
-                if (selection?.file) {
-                  this.venziaDatalinkService.dataLinkDoc(selection.file);
+                if (!selection.isEmpty) {
+                  this.venziaDatalinkService.dataLinkDoc(selection.first);
                 } else {
-                  this.notificationService.showError('DATALINK.MESSAGES.ERRORS.ONLY_FILES');
+                  this.notificationService.showError('DATALINK.MESSAGES.ERRORS.EMPTY_SELECTION');
                 }
               });
           }

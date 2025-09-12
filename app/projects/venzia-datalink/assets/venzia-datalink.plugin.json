@@ -13,7 +13,6 @@
       "type": "core.every",
       "parameters" : [
         {"type":  "rule", "value": "app.navigation.isNotTrashcan"},
-        {"type":  "rule", "value": "app.selection.file"},
         {"type":  "rule", "value": "user.isAdmin"}
       ]
     }

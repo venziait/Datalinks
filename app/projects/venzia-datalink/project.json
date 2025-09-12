@@ -1,0 +1,43 @@
+{
+  "name": "venzia-datalink",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "projects/venzia-datalink/src",
+  "prefix": "lib",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:ng-packagr",
+      "options": {
+        "tsConfig": "projects/venzia-datalink/tsconfig.lib.json",
+        "project": "projects/venzia-datalink/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "projects/venzia-datalink/tsconfig.lib.prod.json"
+        }
+      },
+      "defaultConfiguration": "production",
+      "outputs": ["{workspaceRoot}/dist/@venzia/venzia-datalink"]
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "codeCoverage": true,
+        "main": "projects/venzia-datalink/test.ts",
+        "tsConfig": "projects/venzia-datalink/tsconfig.spec.json",
+        "karmaConfig": "projects/venzia-datalink/karma.conf.js",
+        "stylePreprocessorOptions": {
+          "includePaths": ["node_modules"]
+        }
+      },
+      "configurations": {
+        "adfprod": {
+          "tsConfig": "projects/venzia-datalink/tsconfig.spec.adf.json"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@angular-eslint/builder:lint"
+    }
+  }
+}

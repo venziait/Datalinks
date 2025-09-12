@@ -1,0 +1,98 @@
+{
+ 	"$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://aquacloud.venzia.es/schema/datalink.schema.json",
+    "title": "Datalink",
+    "type": "object",
+ 
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "title": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "aspectName": {
+            "type": "string",
+            "description": "Alfresco aspect name"
+        },
+        "aspectPropertyName": {
+            "type": "string",
+            "description": "Alfresco property name of aspect the type text"
+        },
+        "order": {
+         	"type": "integer",
+         	"description": "Order in tab UI"
+        },
+        "connectorRest": {
+            "type": "object",
+            "description": "properties to service rest",
+            "properties": {
+            	"url": {
+            		"type": "string"
+            	},
+            	"authentication": {
+            		"type": "object",
+            		"required": ["type"],
+            		"properties": {
+            			"type": {
+            				"type": "string",
+            				 "enum": ["none", "basic"]
+            			},
+            			"username":{
+            				"type": "string"
+            			},
+            			"password": {
+            				"type": "string"
+            			}
+            		},
+            		"if": {
+						    "properties": {
+						      "type": {
+						        "enum": ["basic"]
+						      }
+						    }
+						  },
+						  "then": {
+						    "required": ["username","password"]
+						  }
+					},
+            	"searchParam": {
+            		"type": "string"
+            	}
+           }
+        },
+      
+        "columns": {
+        	"description": "Column list",
+            "type": "array",
+            "items": {
+               "type": "object",
+	            "required": ["primaryKey","name","type"],
+	            "properties": {
+			             "primaryKey": {
+				              "type": "boolean"
+				          },
+			              "name": {
+			                "type": "string"
+			              },
+			              "label": {
+			                "type": "string"
+			              },
+			              "type": {
+			                "type": "string"
+			              },
+			              "format": {
+			                "type": "string"
+			              },
+			              "hidden": {
+			                "type": "boolean"
+			              }
+	            }
+            }
+        }
+    },
+    "required": ["name", "aspectName","aspectPropertyName","connectorRest","order"]
+}

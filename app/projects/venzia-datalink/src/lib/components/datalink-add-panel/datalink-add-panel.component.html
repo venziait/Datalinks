@@ -1,0 +1,52 @@
+<mat-form-field class="adf-permission-search-input">
+    <input matInput
+        id="searchInput"
+        [formControl]="searchInput"
+        type="text"
+        placeholder="{{'DATALINK.ADD_RECORD.SEARCH' | translate}}"
+        [value]="searchedWord">
+
+    <mat-icon *ngIf="searchedWord?.length > 0"
+        class="adf-permission-search-icon"
+        data-automation-id="adf-permission-clear-input"
+        id="adf-permission-clear-input"
+        matSuffix (click)="clearSearch()">clear
+    </mat-icon>
+
+    <mat-icon *ngIf="searchedWord?.length === 0"
+        class="adf-permission-search-icon"
+        data-automation-id="adf-permission-search-icon"
+        matSuffix>search
+    </mat-icon>
+</mat-form-field>
+
+<div *ngIf="searchedWord?.length === 0" id="adf-add-permission-type-search">
+    <span class="adf-permission-start-message">{{'DATALINK.ADD_RECORD.TYPE_MESSAGE' | translate}}</span>
+</div>
+
+<aqua-datalink-search #search [connectorRest]="dataLink.connectorRest" [searchTerm]="searchedWord"
+        id="aqua-datalink-add-records-results"
+        class="adf-permission-result-list"
+        [class.adf-permission-result-list-search]="searchedWord.length === 0">
+  <ng-template let-data>
+    <adf-datatable [rows]="data" class="adf-datatable-datalink" [multiselect]="true" (row-unselect)="elementUnClicked"  (row-select)="elementClicked($event)">
+       <data-columns>
+         <ng-container *ngFor="let col of dataLink.columns">
+           <data-column *ngIf="!col.hidden || col.hidden===false" [title]="col.label" [key]="col.name" [type]="col.type" [format]="col.format || 'text'" />
+         </ng-container>
+       </data-columns>
+       <adf-empty-list>
+           <span>{{'DATALINK.ADD_RECORD.EMPTY_SEARCH' | translate}}</span>
+       </adf-empty-list>
+       <adf-loading-content-template>
+          <ng-template>
+              <!--Add your custom loading template here-->
+              <mat-progress-spinner
+                  class="adf-document-list-loading-margin"
+                  [color]="'primary'"
+                  [mode]="'indeterminate'" />
+          </ng-template>
+      </adf-loading-content-template>
+    </adf-datatable>
+  </ng-template>
+</aqua-datalink-search>

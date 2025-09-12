@@ -1,0 +1,28 @@
+{
+  "APP": {
+    "ACTIONS": {
+      "DATALINK": "Editar DataLink"
+    }
+  },
+  "DATALINK" : {
+    "DIALOG": {
+      "TITLE": "Gestionar DataLink",
+      "CLOSE": "Cerrar",
+      "ADD_ROW": "Añadir",
+      "DELETE_ROW": "Eliminar",
+      "EMPTY_DATA": "No hay datos vinculados"
+    },
+    "ADD_RECORD": {
+      "DIALOG_TITLE": "Seleccione y añada nuevos registros",
+      "TYPE_MESSAGE": "Escriba algo para comenzar a buscar",
+      "SEARCH": "Buscar registros",
+      "EMPTY_SEARCH": "No hemos encontrado ningún resultado, cambia los terminos de la búsqueda"
+    },
+    "MESSAGES": {
+      "ERROR": {
+        "ONLY_FILES":"Modulo no disponible para carpetas",
+        "NO_PROPERTIES": "Contenido no compatible. Consulte con el administrador"
+      }
+    }
+  }
+}

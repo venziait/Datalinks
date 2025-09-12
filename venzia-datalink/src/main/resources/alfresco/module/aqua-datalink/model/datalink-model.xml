@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Custom Model -->
+
+<!-- Note: This model is pre-configured to load at startup of the Repository.  So, all custom -->
+<!--       types and aspects added here will automatically be registered -->
+
+<model name="dlnk:venzia" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+   <!-- Optional meta-data about the model -->   
+   <description>Custom Model of Alfresco DataLink</description>
+   <author>Venzia</author>
+   <version>1.0</version>
+
+   <imports>
+   	  <!-- Import Alfresco Dictionary Definitions -->
+      <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+      <!-- Import Alfresco Content Domain Model Definitions -->
+      <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+   </imports>
+
+   <!-- Introduction of new namespaces defined by this model -->
+   <!-- NOTE: The following namespace custom.model should be changed to reflect your own namespace -->
+   <namespaces>
+      <namespace uri="http://venzia.es/model/datalink/1.0" prefix="dlnk"/>
+   </namespaces>
+
+   <aspects>
+      <aspect name="dlnk:employee">
+         <title>Employee</title>
+          <properties>
+            <property name="dlnk:employee">
+               <type>d:text</type>
+                <index enabled="true">
+                    <atomic>true</atomic>
+                    <stored>false</stored>
+                    <tokenised>false</tokenised>
+                </index>
+            </property>
+         </properties>
+      </aspect>
+      <aspect name="dlnk:departm">
+         <title>Departm</title>
+          <properties>
+            <property name="dlnk:departm">
+               <type>d:text</type>
+                 <index enabled="true">
+                    <atomic>true</atomic>
+                    <stored>false</stored>
+                    <tokenised>false</tokenised>
+                </index>
+            </property>
+         </properties>
+      </aspect>
+   </aspects>
+</model>

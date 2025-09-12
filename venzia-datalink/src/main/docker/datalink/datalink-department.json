@@ -1,0 +1,32 @@
+{
+  "name":"departments",
+  "title":"Company Departments",
+  "description":"Example to datalink demo",
+  "aspectName":"dlnk:departm",
+  "aspectPropertyName":"dlnk:departm",
+  "order":20,
+  "connectorRest": {
+    "url": "https://apis.venzia.es:4433/api/v1/departments/search",
+    "authentication": {
+      "type":"basic",
+      "username":"user2019",
+      "password":"g3n3r4l"
+    },
+    "searchParam":"query"
+  },
+  "columns": [
+    {
+      "primaryKey":true,
+      "name":"dept_no",
+      "label":"Id",
+      "type":"text",
+      "hidden":true
+    },
+    {
+      "primaryKey":false,
+      "name":"dept_name",
+      "label":"Name",
+      "type":"text"
+    }
+  ]
+}

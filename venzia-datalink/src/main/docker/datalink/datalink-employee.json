@@ -1,0 +1,45 @@
+{
+  "name":"employee",
+  "title":"Company Employee",
+  "description":"Example to datalink demo",
+  "aspectName":"dlnk:employee",
+  "aspectPropertyName":"dlnk:employee",
+  "order":10,
+  "connectorRest": {
+    "url": "https://apis.venzia.es:4433/api/v1/employees/search",
+    "authentication": {
+      "type":"basic",
+       "username":"user2019",
+       "password":"g3n3r4l"
+    },
+    "searchParam":"query"
+  },
+  "columns": [
+    {
+      "primaryKey":true,
+      "name":"emp_no",
+      "label":"Id",
+      "type":"text",
+	"hidden": true,
+    },
+    {
+      "primaryKey":false,
+      "name":"first_name",
+      "label":"First Name",
+      "type":"text"
+    },
+    {
+      "primaryKey":false,
+      "name":"last_name",
+      "label":"Last Name",
+      "type":"text"
+    },
+    {
+      "primaryKey":false,
+      "name":"hire_date",
+      "label":"Hire Date",
+      "type":"date",
+      "format":"dd/MM/yyyy"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+
+<header mat-dialog-title>{{'DATALINK.DIALOG.TITLE' | translate}}</header>
+<section mat-dialog-content>
+  <aqua-datalink-list
+      #datalinkList
+      [nodeId]="nodeId"
+      (error)="onError($event)"
+      (select)="onSelect($event)" />
+
+</section>
+<footer mat-dialog-actions>
+
+  <button mat-button class="adf-choose-action" color="warn"
+    [mat-dialog-close]="true"
+    [disabled]="currentSelection?.length === 0"
+    (click)="onRemoveSelectionRows($event)">
+      <mat-icon aria-label="delete action">delete</mat-icon>
+    {{ 'DATALINK.DIALOG.DELETE_ROW' | translate }}
+  </button>
+
+  <button mat-button color="primary"
+    [mat-dialog-close]="true"
+    (click)="openAddDataLinkDialog($event)">
+      <mat-icon aria-label="delete action">add_to_photos</mat-icon>
+    {{ 'DATALINK.DIALOG.ADD_ROW' | translate }}
+  </button>
+
+   <button mat-button color="primary"
+     [mat-dialog-close]="true"> {{'DATALINK.DIALOG.CLOSE' | translate}}
+   </button>
+
+</footer>

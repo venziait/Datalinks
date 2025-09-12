@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.lib.json",
+  "compilerOptions": {
+    "declarationMap": false,
+    "paths": {
+      "@alfresco/aca-content": ["dist/@alfresco/aca-content"],
+      "@alfresco/aca-content/viewer": ["dist/@alfresco/aca-content/viewer"],
+      "@alfresco/aca-shared": ["dist/@alfresco/aca-shared"],
+      "@alfresco/aca-shared/store": ["dist/@alfresco/aca-shared/store"],
+      "@alfresco/aca-shared/rules": ["dist/@alfresco/aca-shared/rules"],
+      "@venzia/venzia-shared": ["dist/@venzia/venzia-shared"]
+    }
+  },
+  "angularCompilerOptions": {
+    "compilationMode": "partial"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "APP": {
+    "ACTIONS": {
+      "DATALINK": "Edit DataLink"
+    }
+  },
+  "DATALINK": {
+    "DIALOG": {
+      "TITLE": "Manage DataLink",
+      "CLOSE": "Close",
+      "ADD_ROW": "Add",
+      "DELETE_ROW": "Delete",
+      "EMPTY_DATA": "No linked data yet."
+    },
+    "ADD_RECORD": {
+      "DIALOG_TITLE": "Select to add new records",
+      "TYPE_MESSAGE": "Type something to start searching",
+      "SEARCH": "Search records",
+      "EMPTY_SEARCH": "I sorry we didn't found any result, try you change your query"
+    },
+    "MESSAGES": {
+      "ERRORS": {
+        "ONLY_FILES":"Not a available for folders",
+        "NO_PROPERTIES": "Contenido no compatible. Por favor contacte con el administrador"
+      }
+    }
+  }
+}

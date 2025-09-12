@@ -1,0 +1,80 @@
+{
+  "$schema": "../../../extension.schema.json",
+  "$id": "app.metadata.datalink",
+  "$name": "datalink-plugin",
+  "$version": "2.0.0",
+  "$vendor": "Venzia IT, SL.",
+  "$license": "LGPL-3.0",
+  "$description": "metadata card configuration plugin - demo purpose",
+
+  "rules":[
+    {
+      "id": "app.canManageDataLink",
+      "type": "core.every",
+      "parameters" : [
+        {"type":  "rule", "value": "app.navigation.isNotTrashcan"},
+        {"type":  "rule", "value": "app.selection.file"},
+        {"type":  "rule", "value": "user.isAdmin"}
+      ]
+    }
+  ],
+
+  "features": {
+    "icons": [
+      {
+        "id": "adf:datalink",
+        "value": "./assets/datalink/images/database-link.svg"
+      }
+    ],
+    "toolbar": [
+      {
+        "id": "app.toolbar.more",
+        "children": [
+          {
+            "id": "app.context.menu.datalink",
+            "title": "APP.ACTIONS.DATALINK",
+            "icon": "adf:datalink",
+            "order": 1300,
+            "actions": {
+              "click": "DATALINK_OPEN_ACTION"
+            },
+            "rules": {
+              "visible": "app.canManageDataLink"
+            }
+          }
+        ]
+      }
+    ],
+    "viewer": {
+      "toolbarMoreMenu": [
+        {
+          "id": "app.viewer.datalink",
+          "order": 1300,
+          "title": "APP.ACTIONS.DATALINK",
+          "icon": "adf:datalink",
+          "actions": {
+            "click": "DATALINK_OPEN_ACTION"
+          },
+          "rules": {
+            "visible": "app.canManageDataLink"
+          }
+        }
+      ]
+    },
+    "contextMenu": [
+      {
+        "id": "app.context.menu.datalink",
+        "title": "APP.ACTIONS.DATALINK",
+        "icon": "adf:datalink",
+        "order": 2101,
+        "actions": {
+          "click": "DATALINK_OPEN_ACTION"
+        },
+        "rules": {
+          "visible": "app.canManageDataLink"
+        }
+      }
+    ]
+  }
+
+}

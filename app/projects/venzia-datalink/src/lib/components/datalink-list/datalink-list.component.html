@@ -1,0 +1,24 @@
+<div id="adf-datalink-display-container" class="adf-display-datalink-container">
+  <div *ngIf="isLoading">
+      <mat-progress-bar mode="indeterminate" />
+  </div>
+  <ng-container *ngIf="!isLoading && !!displayNode">
+  <mat-tab-group  dynamicHeight="true" [selectedIndex]="datalinkActiveIndex" (selectedIndexChange)="onChangeTabIndex($event)">
+
+      <mat-tab  *ngFor="let item of datalinkList | sort:'order'" [label]="item.title">
+          <adf-datatable [rows]="rows[item.aspectPropertyName]" class="adf-datatable-datalink"
+                [multiselect]="true" (row-select)="elementClicked($event)" (row-unselect)="elementUnClicked" >
+             <data-columns >
+               <ng-container *ngFor="let col of item.columns">
+                 <data-column *ngIf="!col.hidden || col.hidden===false" [title]="col.label" [key]="col.name" [type]="col.type" [format]="col.format || 'text'" />
+               </ng-container>
+           </data-columns>
+            <adf-empty-list>
+                <span>{{ 'DATALINK.DIALOG.EMPTY_DATA'  | translate }}</span>
+           </adf-empty-list>
+          </adf-datatable>
+      </mat-tab>
+
+  </mat-tab-group>
+  </ng-container>
+</div>

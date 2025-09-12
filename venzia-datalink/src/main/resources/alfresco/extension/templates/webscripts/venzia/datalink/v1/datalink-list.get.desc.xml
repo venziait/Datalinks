@@ -1,0 +1,8 @@
+<webscript>
+    <shortname>Get Datalink List</shortname>
+    <description>return Datalink list</description>
+    <url>/aqua/datalink/v1/list</url>
+    <authentication>user</authentication>
+    <format default="json"></format>
+    <lifecycle>public_api</lifecycle>    
+</webscript>

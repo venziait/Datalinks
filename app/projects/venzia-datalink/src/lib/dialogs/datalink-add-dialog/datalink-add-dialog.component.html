@@ -1,0 +1,20 @@
+<h2 mat-dialog-title id="add-permission-dialog-title">
+    {{(data?.dataLink.title ? data?.dataLink.title : 'DATALINK.ADD_DATALINK.BASE_DIALOG_TITLE') | translate}}
+</h2>
+
+<mat-dialog-content>
+    <aqua-datalink-add-panel #addDatalink
+        [dataLink] = "data.dataLink"
+        (select)="onSelect($any($event))" />
+</mat-dialog-content>
+
+<mat-dialog-actions>
+
+  <button mat-button id="add-permission-dialog-confirm-button" [mat-dialog-close]="true"
+            class="adf-choose-action"
+            [disabled]="currentSelection?.length === 0"
+            (click)="onAddClicked()">{{'PERMISSION_MANAGER.ADD-PERMISSION.ADD-ACTION' | translate}}</button>
+
+  <button mat-button mat-dialog-close id="add-permission-dialog-close-button">{{'PERMISSION_MANAGER.ADD-PERMISSION.CLOSE-ACTION' | translate}}</button>
+
+</mat-dialog-actions>

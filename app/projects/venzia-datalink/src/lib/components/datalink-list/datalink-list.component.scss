@@ -1,0 +1,30 @@
+aqua-datalink-list {
+  height: 400px;
+  .aqua-datalink-list-container {
+    flex: 1;
+
+    .adf-datatable-permission {
+      .adf-data-table-cell--icon {
+        width: auto;
+      }
+    }
+  }
+}
+
+.adf {
+
+    &-display-datalink-container {
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+    &-datatable-datalink {
+        display: flex;
+        flex-basis: 38%;
+    }
+
+    &-datalink-info-drawer &-info-drawer-layout-header {
+        display: none;
+    }
+}

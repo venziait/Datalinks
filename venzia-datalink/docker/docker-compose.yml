@@ -1,13 +1,13 @@
 version: '3.4'
 services:
 #  Optional
-#  aqua-datalink-share:
-#    image: ${docker.share.image}:${alfresco.share.version}
-#    environment:
-#      REPO_HOST: aqua-datalink-acs
-#      REPO_PORT: 8080
-#    ports:
-#      - "${share.port}:8080"
+  aqua-datalink-share:
+    image: ${docker.share.image}:${alfresco.share.version}
+    environment:
+      REPO_HOST: aqua-datalink-acs
+      REPO_PORT: 8080
+    ports:
+      - "${share.port}:8080"
   aqua-datalink-acs:
     image: alfresco-content-services-aqua-datalink:development
     build:

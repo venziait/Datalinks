@@ -113,9 +113,9 @@ export class DatalinkListComponent implements OnChanges {
     this.displayNode = node;
     for (const dataLink of this.datalinkList) {
       // if (this.displayNode.properties.hasOwnProperty(dataLink.aspectPropertyName)) {
-      if (Object.prototype.hasOwnProperty.call(this.displayNode, dataLink.aspectPropertyName)) {
-        this.rows[dataLink.aspectPropertyName] = JSON.parse(this.displayNode.properties[dataLink.aspectPropertyName]);
-      }
+        if (this.displayNode.properties.hasOwnProperty(dataLink.aspectPropertyName)) {
+          this.rows[dataLink.aspectPropertyName] = JSON.parse(this.displayNode.properties[dataLink.aspectPropertyName]);
+        }
     }
   }
 

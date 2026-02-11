@@ -6,9 +6,9 @@
   "aspectPropertyName":"dlnk:employee",
   "order":10,
   "connectorRest": {
-    "url": "https://apis.venzia.es:4433/api/v1/employees/search",
+    "url": "http://localhost:3005/api/v1/public/employees/search",
     "authentication": {
-      "type":"basic",
+      "type":"none",
        "username":"user2019",
        "password":"g3n3r4l"
     },
@@ -20,7 +20,7 @@
       "name":"emp_no",
       "label":"Id",
       "type":"text",
-	"hidden": true,
+	"hidden": true
     },
     {
       "primaryKey":false,

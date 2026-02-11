@@ -6,7 +6,7 @@
   "aspectPropertyName":"dlnk:departm",
   "order":20,
   "connectorRest": {
-    "url": "https://apis.venzia.es:4433/api/v1/departments/search",
+    "url": "http://localhost:3005/api/v1/private/departments/search",
     "authentication": {
       "type":"basic",
       "username":"user2019",

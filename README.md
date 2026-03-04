@@ -1,5 +1,3 @@
-![venzia logo](https://www.softwaredoit.es/logotipos/venzia-it-services-consulting.jpg?t=2025-06-03_08_46_47)
-
 # Venzia Datalinks Add-on
 
 Datalinks lets you seamlessly link document properties with database values. No need for custom implementations, all is done in simple json configuration files.
@@ -76,3 +74,4 @@ Your endpoint must return an array of objects with the same keys of the json
 ]
 ```
 
+Visit us at https://venzia.es and https://aqua.venzia.es or contact directly by email info@venzia.es
